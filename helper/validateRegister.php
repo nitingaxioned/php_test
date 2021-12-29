@@ -55,7 +55,6 @@ function getLogin($user) {
     if($GLOBALS['remember']=='checked'){
         unset($user['password']); 
         setcookie('logedUsre',json_encode($user, true),time()+(1*24*60*60));
-        setcookie('remember',"checked",time()+(1*24*60*60));
     }
     $_SESSION["user"] = $user;
     header("Location: ../index.php");
