@@ -6,22 +6,17 @@ if (!isset($_SESSION['user'])) {
     header("Location: login.php");
     exit;
 }
-if (!isset($_SESSION['chatId'])) {
-    header("Location: ../index.php");
-    exit;
-}
 if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['msg']!='') {
     $obj=new Query();
-    $obj->insertData('messages', array('mesage' => $_POST['msg'], 'toUserId' => $_SESSION['chatId'], 'fromUserId' => $_SESSION['user']['id']));
+    $obj->insertData('messages', array('mesage' => $_POST['msg'], 'toUserId' => '100', 'fromUserId' => $_SESSION['user']['id']));
 }
 
 function showChats()
 {
     $obj=new Query();
-    $con_arr = array('fromUserId' => $_SESSION['user']['id'], 'toUserId' => $_SESSION['chatId']);
-    $orcon_arr = array('fromUserId' => $_SESSION['chatId'], 'toUserId' => $_SESSION['user']['id']);
-    $result = $obj->getData('msgs', '*', $con_arr, $orcon_arr, 'date', 'asc');
-    if (count($result)>0) {
+    $con_arr = array('toUserId' => '100');
+    $result = $obj->getData('msgs', '*', $con_arr, '', 'date', 'asc');
+    if ($result != 0) {
         foreach ($result as $item) {
             ?>
             <li class="chat">
@@ -37,7 +32,7 @@ function showChats()
             <p>No Chats Found !!</p>
         </li>
         <li class="chat">
-            <p>start Your Chit-Chat with <?php echo $_SESSION['chatUser'];?></p>
+            <p>start Your Chit-Chat in General</p>
         </li>
         <?php
     }

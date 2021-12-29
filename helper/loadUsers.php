@@ -23,7 +23,7 @@ function showUsers(){
     $objx=new Query();
     $resultx = $objx->getData('users','id, name');
     foreach($resultx as $item){
-        if ($_SESSION['user']['id'] != $item['id']) {
+        if (!($_SESSION['user']['id'] == $item['id'] || '100' == $item['id'])) {
         ?>
         <li class="user">
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="user-form">

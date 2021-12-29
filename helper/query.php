@@ -3,7 +3,6 @@
 
     class Query extends Database 
     {
-        public $errorPage = 'Location: error.php';
         public function getData($table, $field='*', $condition_arr='' ,$or_condition_arr='' , $order_by_field='', $order_by_type='desc', $limit='')
         {
             try {
@@ -73,9 +72,7 @@
                     return 0;
                 }
             } catch(Exception $e) {
-                $_SESSION['ErrorStr'] = $e->getMessage();
-                header($this->errorPage);
-                exit;
+                die($e->getMessage());
             }
         }
         
@@ -96,9 +93,7 @@
                     $statement->execute();
                 }
             } catch (Exception $e) {
-                $_SESSION['ErrorStr'] = $e->getMessage();
-                header($this->errorPage);
-                exit;
+                die($e->getMessage());
             }
         }
         
@@ -109,9 +104,7 @@
                 $statement->bindParam(1, $id);
                 $statement->execute();
             } catch (Exception $e) {
-                $_SESSION['ErrorStr'] = $e->getMessage();
-                header($this->errorPage);
-                exit;
+                die($e->getMessage());
             }
         }
         
@@ -140,9 +133,7 @@
                     $statement->execute();
                 }
             } catch(Exception $e) {
-                $_SESSION['ErrorStr'] = $e->getMessage();
-                header($this->errorPage);
-                exit;
+                die($e->getMessage());
             }
         }
     }
