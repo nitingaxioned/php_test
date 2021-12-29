@@ -24,25 +24,27 @@
         <!--header section end-->
         <!--main section start-->
         <main>
-            <ul class="users-list">
-                <li class="chat" >
-                    <p class="name">XYZ :</p>
-                    <p>Lorem ipsum dolor sit amet  consectetur adipisicing consectetur adipisicing consectetur adipisicin gconsectetur adipisicing</p>
-                </li>
-                <li class="chat">
-                    <p class="name">XYZ :</p>
-                    <p>Lorem ipsum dolor sit amet  consectetur adipisicing consectetur adipisicing consectetur adipisicin gconsectetur adipisicing</p>
-                    <p class="time"> ter tidvasfbsgzfbsbbeemfk</p>
-                </li>
-                <li class="chat">
-                    <p class="name">XYZ :</p>
-                    <p>Lorem ipsum dolor sit amet  consectetur adipisicing consectetur adipisicing consectetur adipisicin gconsectetur adipisicing</p>
-                </li>
-                <li class="chat">
-                    <p class="name">XYZ :</p>
-                    <p>Lorem ipsum dolor sit amet  consectetur adipisicing consectetur adipisicing consectetur adipisicin gconsectetur adipisicing</p>
-                </li>
-            </ul>
+            <div class='chatbox'>
+                <ul class="users-list">
+                    <li class="chat" >
+                        <p class="name">XYZ :</p>
+                        <p>Lorem ipsum dolor sit amet  consectetur adipisicing consectetur adipisicing consectetur adipisicin gconsectetur adipisicing</p>
+                    </li>
+                    <li class="chat">
+                        <p class="name">XYZ :</p>
+                        <p>Lorem ipsum dolor sit amet  consectetur adipisicing consectetur adipisicing consectetur adipisicin gconsectetur adipisicing</p>
+                        <p class="time"> ter tidvasfbsgzfbsbbeemfk</p>
+                    </li>
+                    <li class="chat">
+                        <p class="name">XYZ :</p>
+                        <p>Lorem ipsum dolor sit amet  consectetur adipisicing consectetur adipisicing consectetur adipisicin gconsectetur adipisicing</p>
+                    </li>
+                    <li class="chat">
+                        <p class="name">XYZ :</p>
+                        <p>Lorem ipsum dolor sit amet  consectetur adipisicing consectetur adipisicing consectetur adipisicin gconsectetur adipisicing</p>
+                    </li>
+                </ul>
+            </div>
             <form class="chat msg-input">
                 <input type="text" id="msg" name="msg" placeholder="Enter your message..." value="">
                 <input type="submit" id="send" name="send" value="send">

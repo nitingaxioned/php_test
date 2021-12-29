@@ -15,12 +15,12 @@
       <ul class="navbar">
         <li><a href='view/logout.php' title='Logout'>Logout</a></li>
       </ul>
-      <h1>Registerd Users</h1>
+      <h1>Chit-Chat Users</h1>
     </header>
     <!--header section end-->
     <!--main section start-->
     <main>
-      <ul class="users-list">
+      <ul class="users-list all-users">
         <li class="user" >Genral</li>
         <li class="user">user1</li>
         <li class="user">user1</li>

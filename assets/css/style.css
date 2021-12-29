@@ -251,15 +251,20 @@ span.psw {
 
 .form-controls input:hover{ background-color: #323232; }
 
-.users-list{
+.chatbox{
+  height: 50vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   width: 40%;
   margin: auto;
-  margin-top: 20px;
+}
+
+.users-list{
+  width: 100%;
+  margin: auto;
   background-color: #ffffff;
-  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   padding: 10px 0;
 }
 
@@ -270,6 +275,12 @@ span.psw {
   padding: 5px;
   background-color: #cccccc;
   border-radius: 5px;
+}
+
+.all-users{
+  width: 40%;
+  margin-top: 20px;
+  border-radius: 8px;
 }
 
 .chat {
