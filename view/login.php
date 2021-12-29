@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
     session_start();
-    // require '../helper/validateLogin.php';
+    require '../helper/validateLogin.php';
 ?>
 <head>
     <meta charset="utf-8">
@@ -41,7 +41,7 @@
                     </label>
                 </div>
                 <div class="containerx" style="background-color:#f1f1f1">
-                    <button type="submit" class="cancelbtn" name="cancel">Cancel</button>
+                    <button type="submit" class="cancelbtn" name="clear">Clear</button>
                     <button type="submit" class="cancelbtn" name="signin">Sign In</button>
                 </div>
             </form>
