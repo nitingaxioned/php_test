@@ -108,12 +108,45 @@ li {
   Header styling starts here
 =================================*/
 
+h1 {
+  font-style: Georgia;
+  font-weight: 600;
+  font-size: 35px;
+  color: #ff5555;
+  text-align: center;
+  padding: 16px;
+}
 
+.loginTitel {
+  margin-bottom: 70px;
+}
 
+.navbar{
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  margin: 10px 0 0 0;
+}
 
+.navbar li{
+  margin: 0 15px;
+}
 
+.navbar li a{
+  background-color: #1c8ffa;
+  border: none;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
 
-
+.navbar li a:hover{
+  background-color: #323232;
+}
 
 /*=================================
   Header styling ends here
@@ -123,12 +156,150 @@ li {
   main styling starts here
 =================================*/
 
+form {
+  border: 3px solid #f1f1f1;
+  max-width: 600px;
+  margin: auto;
+}
+
+input[type=text], input[type=password], textarea {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.error{
+  position: absolute;
+  color: #ff5555;
+  font-size: 14px;
+  right: 5px;
+  top: 11px;
+}
+
+button,
+input[type='submit'] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.form-group{ 
+  margin: 5px 0 0;
+  position: relative;
+}
+
+#title{
+  margin-bottom: 20px;
+}
+
+textarea{
+  height: 35vh;
+  resize: none;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #04AA6D;
+}
 
 
+.container {
+  padding: 20px 25px;
+}
 
+.containerx {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px;
+}
 
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
 
+.form-controls{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
 
+.form-controls input{
+  width: 48%;
+  background-color: #04AA6D;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  padding: 10px 16px;
+  margin: 18px 0 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.form-controls input:hover{ background-color: #323232; }
+
+.users-list{
+  width: 40%;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.user{
+  width: 90%;
+  text-align: center;
+  margin: 5px auto;
+  padding: 5px;
+  background-color: #cccccc;
+  border-radius: 5px;
+}
+
+.chat {
+  margin: 10px 20px;
+  display: flex;
+  position: relative;
+}
+
+.time{
+  position: absolute;
+  top: -12px;
+  left: 0;
+  font-size: 12px;
+  color: #777;
+}
+
+.name {
+  color: #ff5555;
+  margin-right: 5px;
+}
+
+.msg-input {
+  margin: auto;
+  border: none;
+  width: 40%;
+}
+
+.msg-input input[type='submit'] {
+  width: auto;
+}
 
 /*=================================
   main styling ends here
