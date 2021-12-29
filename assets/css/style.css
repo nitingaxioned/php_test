@@ -272,9 +272,6 @@ span.psw {
   width: 90%;
   text-align: center;
   margin: 5px auto;
-  padding: 5px;
-  background-color: #cccccc;
-  border-radius: 5px;
 }
 
 .all-users{
@@ -306,6 +303,15 @@ span.psw {
   margin: auto;
   border: none;
   width: 40%;
+}
+
+.user-form {
+  margin: auto;
+  border: none;
+}
+
+.user-form button{
+  width: 80%;
 }
 
 .msg-input input[type='submit'] {

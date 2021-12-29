@@ -52,8 +52,8 @@ function validateRrgister() {
 }
 
 function getLogin($user) {
+    unset($user['password']); 
     if($GLOBALS['remember']=='checked'){
-        unset($user['password']); 
         setcookie('logedUsre',json_encode($user, true),time()+(1*24*60*60));
     }
     $_SESSION["user"] = $user;

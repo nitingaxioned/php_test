@@ -1,5 +1,9 @@
 <!doctype html>
 <html lang="en">
+<?php
+    session_start();
+    require 'helper/loadUsers.php';
+?>
 <head>
   <meta charset="utf-8">
   <title>Chit-Chat | Home</title>
@@ -21,10 +25,14 @@
     <!--main section start-->
     <main>
       <ul class="users-list all-users">
-        <li class="user" >Genral</li>
-        <li class="user">user1</li>
-        <li class="user">user1</li>
-        <li class="user">user1</li>
+        <li class="user">
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="user-form">
+            <button type="submit" class="cancelbtn" name="general-btn">General Group</button>
+          </form>
+        </li>
+        <?php
+          showUsers();
+        ?>
       </ul>
     </main>
     <!--main section end-->

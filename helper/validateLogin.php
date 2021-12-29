@@ -13,10 +13,6 @@ if(isset($_COOKIE['logedUsre'])) {
     getLogin(json_decode($_COOKIE['logedUsre'], true));
 }
 
-if(isset($_COOKIE['logedmail'])) {
-    $mail = $_COOKIE['logedmail'];
-}
-
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST['mail'])) {
         $mail = $_POST['mail'];
@@ -62,8 +58,8 @@ function matchLogin(){
 }
 
 function getLogin($user) {
+    unset($user['password']); 
     if($GLOBALS['remember']=='checked'){
-        unset($user['password']); 
         setcookie('logedUsre',json_encode($user, true),time()+(1*24*60*60),);
     }
     $_SESSION["user"] = $user;
