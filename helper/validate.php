@@ -44,12 +44,15 @@ class Validate extends Query
   {
     $flag = true;
     if (trim($str) != "") {
-      if (!preg_match("/^[A-Za-z ]+$/",$str)) {
-        $errStr = "This is an invalid input.";
+      if (!preg_match("/^[A-Za-z0-9 ]+$/",$str)) {
+        $errStr = "Name is an invalid input.";
+        $flag = false;
+      } elseif (strlen($str)>25) {
+        $errStr = "Name can be maximum of 25 characters.";
         $flag = false;
       }
     } else {
-      $errStr = "This field is required.";
+      $errStr = "Name field is required.";
       $flag = false;
     }
     return $flag;

@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
  session_start();
-//  require '../helper/validateRegister.php';
+ require '../helper/validateRegister.php';
  ?>
 <head>
   <meta charset="utf-8">
