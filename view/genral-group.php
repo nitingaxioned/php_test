@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
     session_start();
-    // require '../helper/validateLogin.php';
+    require '../helper/validateLogin.php';
 ?>
 <head>
     <meta charset="utf-8">
@@ -16,7 +16,7 @@
         <header>
             <ul class="navbar">
                 <li><a href="../index.php" title="Home Page">Home</a></li>
-                <li><a href='view/logout.php' title='Logout'>Logout</a></li>
+                <li><a href='logout.php' title='Logout'>Logout</a></li>
                 <li><a href='genral-group.php' title='Refresh'>Refresh</a></li>
             </ul>
             <h1 class="loginTitel">Genral Chit-Chat</h1>

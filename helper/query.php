@@ -4,11 +4,11 @@
     class Query extends Database 
     {
         public $errorPage = 'Location: error.php';
-        public function getData($table, $field='*', $condition_arr='', $order_by_field='', $order_by_type='desc', $limit='')
+        public function getData($table, $field='*', $condition_arr='' ,$or_condition_arr='' , $order_by_field='', $order_by_type='desc', $limit='')
         {
             try {
                 $sql = "select $field from $table ";
-                if ($condition_arr != '') {
+                if ($condition_arr != '' && $or_condition_arr == '') {
                     $sql .= ' where ';
                     $c = count($condition_arr);	
                     $i = 1;
@@ -21,6 +21,30 @@
                         $i++;
                     }
                 }
+                if ($condition_arr != '' && $or_condition_arr != '') {
+                    $sql .= ' where (';
+                    $c = count($condition_arr);	
+                    $i = 1;
+                    foreach ($condition_arr as $key => $val) {
+                        if ($i==$c) {
+                            $sql .= "$key=:$key)";
+                        } else {
+                            $sql .= "$key=:$key and ";
+                        }
+                        $i++;
+                    }
+                    $sql .= ' or (';
+                    $c = count($or_condition_arr);	
+                    $i = 1;
+                    foreach ($condition_arr as $key => $val) {
+                        if ($i==$c) {
+                            $sql .= "$key=:or$key)";
+                        } else {
+                            $sql .= "$key=:or$key and ";
+                        }
+                        $i++;
+                    }
+                }
                 if ($order_by_field != '') {
                     $sql .= " order by $order_by_field $order_by_type ";
                 }
@@ -28,9 +52,17 @@
                     $sql .= " limit $limit ";
                 }
                 $statement = $this->connect()->prepare($sql);
-                if ($condition_arr != '') {
-                    foreach($condition_arr as $key => &$val) {
-                        $statement->bindParam($key, $val);
+                if ($condition_arr != '' && $or_condition_arr == '') {
+                    foreach($condition_arr as $key => &$vale) {
+                        $statement->bindParam($key, $vale);
+                    }
+                }
+                if ($condition_arr != '' && $or_condition_arr != '') {
+                    foreach($condition_arr as $key => &$valu) {
+                        $statement->bindParam($key, $valu);
+                    }
+                    foreach($or_condition_arr as $key => &$val) {
+                        $statement->bindParam('or'.$key, $val);
                     }
                 }
                 $statement->execute();

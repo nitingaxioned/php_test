@@ -252,6 +252,8 @@ span.psw {
 .form-controls input:hover{ background-color: #323232; }
 
 .chatbox{
+  position: relative;
+  top: -20px;
   height: 50vh;
   overflow-x: hidden;
   overflow-y: auto;
@@ -289,7 +291,7 @@ span.psw {
 .time{
   position: absolute;
   top: -12px;
-  left: 0;
+  right: 0;
   font-size: 12px;
   color: #777;
 }
