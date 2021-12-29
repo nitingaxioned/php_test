@@ -67,9 +67,7 @@ function getLogin($user) {
         setcookie('logedUsre',json_encode($user, true),time()+(1*24*60*60),);
         setcookie('remember',"checked",time()+(1*24*60*60));
     }
-    $_SESSION["userId"] = $user['id'];
-    $_SESSION["role"] = $user['role'];
-    $_SESSION["author"] = $user['name'];
+    $_SESSION["user"] = $user;
     header("Location: ../index.php");
     exit;
 }
